@@ -1,10 +1,10 @@
 import java.util.Scanner;
 
-public class ATM {
+public class codsoft_task3 {
     private bank_account account;
     private Scanner scanner;
 
-    public ATM(bank_account account) {
+    public codsoft_task3(bank_account account) {
         this.account = account;
         this.scanner = new Scanner(System.in);
     }
@@ -68,9 +68,36 @@ public class ATM {
         bank_account my_account = new bank_account(1000);
 
         // Create an ATM instance and pass the bank account to it
-        ATM atm = new ATM(my_account);
+        codsoft_task3 atm = new codsoft_task3(my_account);
 
         // Show the ATM menu
         atm.showMenu();
+    }
+}
+ class bank_account {
+    private double balance;
+
+    public bank_account(double initialBalance) {
+        this.balance = initialBalance;
+    }
+
+    public double getBalance() {
+        return balance;
+    }
+
+    public boolean deposit(double amount) {
+        if (amount > 0) {
+            balance += amount;
+            return true;
+        }
+        return false;
+    }
+
+    public boolean withdraw(double amount) {
+        if (amount > 0 && amount <= balance) {
+            balance -= amount;
+            return true;
+        }
+        return false;
     }
 }

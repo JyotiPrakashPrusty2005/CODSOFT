@@ -1,7 +1,7 @@
 import java.util.Scanner;
 import java.util.Random;
 
-public class numb_game {
+public class codsoft_task1 {
     
      private static final int low_bound = 1;
      private static final int upper_bound = 100;
